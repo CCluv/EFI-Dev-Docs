@@ -16,7 +16,7 @@
     4)  为了构建basetools需下载并安装Python2.7.x(https://www.python.org/)到默认目录C:/Python27 
     5)  从 https://wiki.openssl.org/index.php/Binaries 下载最新OpenSSL预编译好的二进制可直行文件. 解压到某目录并将其目录添加到系统环境变量PATH中.
 
-2.  为UDK2018发布创建全量源代目录
+2.  为UDK2018创建全量源代码目录
     1)  创建工作目录,例如C:\MyWorkspace
     2)  从[UDK2018 Release Page](https://github.com/tianocore/edk2/releases/tag/vUDK2018)下载官方发布UDK2018 .zip 文件
         1) 下载 - UDK2018 edk-vUDK2018 工作目录 [Source code (zip file)](https://github.com/tianocore/edk2/archive/vUDK2018.zip) 
