@@ -56,9 +56,9 @@
 1. 安装微软的Visual Studio 2015或以上(任意版本,没有正版制授权的话推荐[VS 2017 community版](https://visualstudio.microsoft.com/zh-hans/vs/community/)),UEFI开发其实只用到了其中的C++工具链并且可以是任意版本,可以用Cygwin+gcc代替,安装时只在工作负载选择“使用C++的桌面开发”即可。
 2. 在开始菜单中找到“适用于 VS 2017 的 x64 本机工具命令提示”，若工作目录不在C盘需要用D:这样的命令换分区号(dos遗留问题),不然仅仅是用cd命令无效。
 3. 若是遇到错误:
-    1. edk2_vUDK2018\BaseTools\Source\C\makefiles\ms.common 文件里找到/WX并删除(cl.exe的/WX选项是将warining视为错误)
-    2. edk2_vUDK2018\BaseTools\Source\C\VfrCompile\Makefile 文件里找到/WX并删除
-    3. edk2_vUDK2018\BaseTools\Source\C\Include\IndustryStandard\PeImage.h 文件中(665行)改为
+    1) edk2_vUDK2018\BaseTools\Source\C\makefiles\ms.common 文件里找到/WX并删除(cl.exe的/WX选项是将warining视为错误)
+    2) edk2_vUDK2018\BaseTools\Source\C\VfrCompile\Makefile 文件里找到/WX并删除
+    3) edk2_vUDK2018\BaseTools\Source\C\Include\IndustryStandard\PeImage.h 文件中(665行)改为
         ```C
         #ifndef _WINNT_
         typedef struct {
@@ -69,6 +69,8 @@
         #endif
         ```
 4. 如果仅仅是学习UEFI而不是大批编译的话,UDK里的python工具可以不用编译,默认直接用相应的.py文件干活.要是想编译的话,需要`pip.exe install cx_Freeze`然后`set PYTHON_FREEZER_PATH=C:\Python27\Scripts`(如果你是这个目录的话),重新运行一遍rebuild在`BaseTools\Bin\Win32`目录下多出一个`lib`目录和一堆`exe`就是完成了.预编译可能会稍稍提高以后UEFI程序的编译速度. (Makefile中提到Using cx_Freeze 4.2.3 with Python 2.7.2,反正我这里用最新版本编译了后就不能用了)
+
+
 ---
 原文
 
